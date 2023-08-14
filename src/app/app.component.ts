@@ -5,13 +5,20 @@ import { Component } from '@angular/core';
   template: `
     <div class="navigation-container">
       <button
-          mat-raised-button routerLink="/"
+          mat-raised-button routerLink="/regular-confirmation"
           routerLinkActive="active"
           #basic="routerLinkActive"
           [color]="basic.isActive ? 'primary' : ''">
           Regular Confirmation
       </button>
-      <button mat-raised-button routerLink="/reactive-confirmation">Reactive Confirmation</button>
+      <button
+          mat-raised-button
+          routerLink="/reactive-confirmation"
+          routerLinkActive="active"
+          #reactive="routerLinkActive"
+          [color]="reactive.isActive ? 'primary' : ''">
+          Reactive Confirmation
+      </button>
       <button mat-raised-button routerLink="/decorator-confirmation">Decorator Confirmation</button>
       <button mat-raised-button routerLink="/decorator-guard-confirmation">Decorator Guard Confirmation</button>
     </div>

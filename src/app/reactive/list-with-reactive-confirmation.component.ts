@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { filter, tap } from 'rxjs';
-import { ConfirmationDialogComponent } from './confirmation-dialog.component';
+import { confirm$ } from './confirm-rxjs-operator';
+import { tap } from 'rxjs';
 
 @Component({
-  selector: 'list-with-regular-confirmation',
+  selector: 'list-with-reactive-confirmation',
   template: `
     <mat-list>
       <mat-list-item>
@@ -13,7 +13,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog.component';
             mat-stroked-button
             color="warn"
             (click)="onRemove('Pepper')">
-          remove
+          remove with reactive confirmation
         </button>
       </mat-list-item>
       <mat-list-item>
@@ -22,7 +22,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog.component';
             mat-stroked-button
             color="warn"
             (click)="onRemove('Salt')">
-          remove
+          remove with reactive confirmation
         </button>
       </mat-list-item>
       <mat-list-item>
@@ -31,7 +31,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog.component';
             mat-stroked-button
             color="warn"
             (click)="onRemove('Paprika')">
-          remove
+          remove with reactive confirmation
         </button>
       </mat-list-item>
     </mat-list>
@@ -44,17 +44,15 @@ import { ConfirmationDialogComponent } from './confirmation-dialog.component';
       `
   ]
 })
-export class ListWithRegularConfirmationComponent {
+export class ListWithReactiveConfirmationComponent {
   constructor(private dialog: MatDialog) {
   }
 
   onRemove(name: string) {
-    this.dialog.open(ConfirmationDialogComponent, { data: `Are you sure you want to remove ${name} product?` })
-        .afterClosed()
-        .pipe(
-            filter(confirm => confirm),
-            tap(() => console.log('if confirm is true your logic goes here')),
-        )
-        .subscribe();
+      confirm$(this.dialog, `Are you sure you want to remove ${name} product?`)
+          .pipe(
+              tap(() => console.log('if confirm is true your logic goes here')),
+          )
+          .subscribe();
   }
 }

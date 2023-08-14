@@ -11,16 +11,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {
   ConfirmationDialogComponent,
-} from './basic-example/confirmation-dialog.component';
+} from './regular/confirmation-dialog.component';
 import {
   ListWithRegularConfirmationComponent,
-} from './basic-example/list-with-regular-confirmation.component';
+} from './regular/list-with-regular-confirmation.component';
+import {
+  ListWithReactiveConfirmationComponent,
+} from './reactive/list-with-reactive-confirmation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConfirmationDialogComponent,
     ListWithRegularConfirmationComponent,
+    ListWithReactiveConfirmationComponent,
   ],
   imports: [
     BrowserModule,
