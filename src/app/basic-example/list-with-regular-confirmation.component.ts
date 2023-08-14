@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { filter, tap } from 'rxjs';
-import { BasicConfirmationDialogComponent } from './basic-confirmation';
+import { ConfirmationDialogComponent } from './confirmation-dialog.component';
 
 @Component({
-  selector: 'app-basic-example',
+  selector: 'list-with-regular-confirmation',
   template: `
     <mat-list>
       <mat-list-item>
@@ -44,12 +44,12 @@ import { BasicConfirmationDialogComponent } from './basic-confirmation';
       `
   ]
 })
-export class BasicExampleComponent {
+export class ListWithRegularConfirmationComponent {
   constructor(private dialog: MatDialog) {
   }
 
   onRemove(name: string) {
-    this.dialog.open(BasicConfirmationDialogComponent, { data: `Are you sure you want to remove ${name} product?` })
+    this.dialog.open(ConfirmationDialogComponent, { data: `Are you sure you want to remove ${name} product?` })
         .afterClosed()
         .pipe(
             filter(confirm => confirm),

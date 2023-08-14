@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-    selector: 'basic-confirmation-dialog',
+    selector: 'confirmation-dialog',
     template: `
         <h2 mat-dialog-title>Warning</h2>
         <mat-dialog-content class="mat-typography">{{ message }}</mat-dialog-content>
@@ -21,7 +21,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
         </mat-dialog-actions>
     `,
 })
-export class BasicConfirmationDialogComponent {
+export class ConfirmationDialogComponent {
     constructor(@Inject(MAT_DIALOG_DATA) public message: string) {
     }
 }

@@ -9,10 +9,11 @@ import { Component } from '@angular/core';
           routerLinkActive="active"
           #basic="routerLinkActive"
           [color]="basic.isActive ? 'primary' : ''">
-          Basic Confirmation
+          Regular Confirmation
       </button>
-      <button mat-raised-button routerLink="/decorator-component">@Decorator in Component Confirmation</button>
-      <button mat-raised-button routerLink="/decorator-guard">@Decorator in Guard Confirmation</button>
+      <button mat-raised-button routerLink="/reactive-confirmation">Reactive Confirmation</button>
+      <button mat-raised-button routerLink="/decorator-confirmation">Decorator Confirmation</button>
+      <button mat-raised-button routerLink="/decorator-guard-confirmation">Decorator Guard Confirmation</button>
     </div>
     <router-outlet></router-outlet>
   `,

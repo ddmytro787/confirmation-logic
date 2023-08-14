@@ -9,16 +9,18 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { BasicExampleComponent } from './basic-example/basic-example.component';
 import {
-  BasicConfirmationDialogComponent,
-} from './basic-example/basic-confirmation';
+  ConfirmationDialogComponent,
+} from './basic-example/confirmation-dialog.component';
+import {
+  ListWithRegularConfirmationComponent,
+} from './basic-example/list-with-regular-confirmation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BasicExampleComponent,
-    BasicConfirmationDialogComponent,
+    ConfirmationDialogComponent,
+    ListWithRegularConfirmationComponent,
   ],
   imports: [
     BrowserModule,
