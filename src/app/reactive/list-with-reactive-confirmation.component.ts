@@ -6,35 +6,7 @@ import { confirm$ } from './confirm-rxjs.operator';
 @Component({
   selector: 'list-with-reactive-confirmation',
   template: `
-    <mat-list>
-      <mat-list-item>
-        <span class="label">Pepper</span>
-        <button
-          mat-stroked-button
-          color="warn"
-          (click)="onRemove('Pepper')">
-          remove with reactive confirm
-        </button>
-      </mat-list-item>
-      <mat-list-item>
-        <span class="label">Salt</span>
-        <button
-          mat-stroked-button
-          color="warn"
-          (click)="onRemove('Salt')">
-          remove with reactive confirm
-        </button>
-      </mat-list-item>
-      <mat-list-item>
-        <span class="label">Paprika</span>
-        <button
-          mat-stroked-button
-          color="warn"
-          (click)="onRemove('Paprika')">
-          remove with reactive confirm
-        </button>
-      </mat-list-item>
-    </mat-list>
+      <products-list type="reactive" (remove)="onRemove($event)"></products-list>
   `,
 })
 export class ListWithReactiveConfirmationComponent {

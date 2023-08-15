@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { setModuleInjector } from './decorator/module-injector';
 
 import { AppComponent } from './app.component';
+import { ListComponent } from './regular/list.component';
 import {
   ConfirmationDialogComponent,
 } from './regular/confirmation-dialog.component';
@@ -27,6 +28,7 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
+    ListComponent,
     ConfirmationDialogComponent,
     ListWithRegularConfirmationComponent,
     ListWithReactiveConfirmationComponent,
