@@ -6,6 +6,9 @@ import {
 import {
   ListWithReactiveConfirmationComponent,
 } from './reactive/list-with-reactive-confirmation.component';
+import {
+  ListWithDecoratorConfirmationComponent,
+} from './decorator/list-with-decorator-confirmation.component';
 
 const routes: Routes = [
   {
@@ -15,6 +18,10 @@ const routes: Routes = [
   {
     path: 'reactive-confirmation',
     component: ListWithReactiveConfirmationComponent,
+  },
+  {
+    path: 'decorator-confirmation',
+    component: ListWithDecoratorConfirmationComponent,
   },
   {
     path: '',

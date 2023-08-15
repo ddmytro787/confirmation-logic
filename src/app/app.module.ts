@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -7,6 +7,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { setModuleInjector } from './decorator/module-injector';
 
 import { AppComponent } from './app.component';
 import {
@@ -18,6 +20,9 @@ import {
 import {
   ListWithReactiveConfirmationComponent,
 } from './reactive/list-with-reactive-confirmation.component';
+import {
+  ListWithDecoratorConfirmationComponent,
+} from './decorator/list-with-decorator-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +30,7 @@ import {
     ConfirmationDialogComponent,
     ListWithRegularConfirmationComponent,
     ListWithReactiveConfirmationComponent,
+    ListWithDecoratorConfirmationComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,10 @@ import {
     MatDialogModule,
     AppRoutingModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) {
+    setModuleInjector(injector);
+  }
+}

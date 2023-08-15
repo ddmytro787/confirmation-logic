@@ -19,8 +19,14 @@ import { Component } from '@angular/core';
           [color]="reactive.isActive ? 'primary' : ''">
           Reactive Confirmation
       </button>
-      <button mat-raised-button routerLink="/decorator-confirmation">Decorator Confirmation</button>
-      <button mat-raised-button routerLink="/decorator-guard-confirmation">Decorator Guard Confirmation</button>
+      <button
+          mat-raised-button
+          routerLink="/decorator-confirmation"
+          routerLinkActive="active"
+          #decorator="routerLinkActive"
+          [color]="decorator.isActive ? 'primary' : ''">
+          Decorator Confirmation
+      </button>
     </div>
     <router-outlet></router-outlet>
   `,
